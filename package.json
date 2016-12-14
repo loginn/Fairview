@@ -1,0 +1,25 @@
+{
+  "name": "fairview",
+  "version": "1.0.0",
+  "description": "Complex Story-Building Tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/loginn/Fairview.git"
+  },
+  "author": "Vincent Kurta",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/loginn/Fairview/issues"
+  },
+  "homepage": "https://github.com/loginn/Fairview#readme",
+  "dependencies": {
+    "@angular/core": "^2.3.0",
+    "angular2": "^2.0.0-beta.21",
+    "rxjs": "^5.0.0-rc.4",
+    "zone.js": "^0.7.2"
+  }
+}
