@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import {TagsService} from "./tags.service";
 
 @Component({
   selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>`,
+  template: `<tags-component>Loading</tags-component>`,
+  providers: [TagsService]
 })
 export class AppComponent  { name = 'Angular'; }

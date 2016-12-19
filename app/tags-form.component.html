@@ -1,0 +1,13 @@
+<button (click)="displayAddDialogue()">+</button>
+<div *ngIf="addDialogue">
+    <div class="container">
+        <form (ngSubmit)="onSubmit()" #tagForm="ngForm">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" required [(ngModel)]="newTag.name" name="name">
+            </div>
+            <button type="submit">Add Tag</button>
+        </form>
+    </div>
+    {{newTag.id}} {{newTag.name}}
+</div>
