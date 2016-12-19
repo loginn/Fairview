@@ -12,8 +12,10 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
-var tags_component_1 = require('./tags.component');
-var tags_form_component_1 = require("./tags-form.component");
+var tag_list_component_1 = require('./tags/tag-list.component');
+var tag_form_component_1 = require("./tags/tag-form.component");
+var tag_component_1 = require("./tags/tag.component");
+var character_detail_component_1 = require("./character-detail.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,8 +24,10 @@ var AppModule = (function () {
             imports: [platform_browser_1.BrowserModule,
                 forms_1.FormsModule],
             declarations: [app_component_1.AppComponent,
-                tags_component_1.TagsComponent,
-                tags_form_component_1.TagsFormComponent],
+                tag_list_component_1.TagListComponent,
+                tag_form_component_1.TagFormComponent,
+                tag_component_1.TagComponent,
+                character_detail_component_1.CharacterDetailComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

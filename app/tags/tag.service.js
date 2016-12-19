@@ -8,21 +8,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var tag_service_1 = require("./tags/tag.service");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+var core_1 = require("@angular/core");
+var mock_tag_1 = require("./mock.tag");
+var TagService = (function () {
+    function TagService() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "<character-detail></character-detail>",
-            providers: [tag_service_1.TagService]
-        }), 
+    TagService.prototype.getTags = function () {
+        return Promise.resolve(mock_tag_1.TAGS);
+    };
+    TagService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], TagService);
+    return TagService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.TagService = TagService;
+//# sourceMappingURL=tag.service.js.map

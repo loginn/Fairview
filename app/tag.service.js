@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var mock_tags_1 = require("./mock.tags");
-var TagsService = (function () {
-    function TagsService() {
+var mock_tag_1 = require("./mock.tag");
+var TagService = (function () {
+    function TagService() {
     }
-    TagsService.prototype.getTags = function () {
-        return Promise.resolve(mock_tags_1.TAGS);
+    TagService.prototype.getTags = function () {
+        return Promise.resolve(mock_tag_1.TAGS);
     };
-    TagsService = __decorate([
+    TagService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], TagsService);
-    return TagsService;
+    ], TagService);
+    return TagService;
 }());
-exports.TagsService = TagsService;
-//# sourceMappingURL=tags.service.js.map
+exports.TagService = TagService;
+//# sourceMappingURL=tag.service.js.map

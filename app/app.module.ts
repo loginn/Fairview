@@ -3,15 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent }  from './app.component';
-import {TagsComponent} from './tags.component'
-import {TagsFormComponent} from "./tags-form.component";
+import {TagListComponent} from './tags/tag-list.component'
+import {TagFormComponent} from "./tags/tag-form.component";
+import {TagComponent} from "./tags/tag.component";
+import {CharacterDetailComponent} from "./character-detail.component";
+
 
 @NgModule({
   imports:      [ BrowserModule,
                   FormsModule ],
   declarations: [ AppComponent,
-                  TagsComponent,
-                  TagsFormComponent ],
+                  TagListComponent,
+                  TagFormComponent,
+                  TagComponent,
+                  CharacterDetailComponent],
   bootstrap:    [ AppComponent ]
 })
 

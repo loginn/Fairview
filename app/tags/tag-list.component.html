@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let tag of tags">
+        <tag-comp [tag]="tag" [tags]="tags"></tag-comp>
+    </li>
+</ul>
+<tag-form [localTags]="tags"></tag-form>

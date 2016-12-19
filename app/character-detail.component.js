@@ -8,21 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var tag_service_1 = require("./tags/tag.service");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+var core_1 = require("@angular/core");
+var character_1 = require("./character");
+var CharacterDetailComponent = (function () {
+    function CharacterDetailComponent() {
+        this.character = new character_1.Character(0, 'Paul', 'Blond', []);
     }
-    AppComponent = __decorate([
+    CharacterDetailComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "<character-detail></character-detail>",
-            providers: [tag_service_1.TagService]
+            moduleId: module.id,
+            selector: 'character-detail',
+            templateUrl: 'character-detail.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CharacterDetailComponent);
+    return CharacterDetailComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CharacterDetailComponent = CharacterDetailComponent;
+//# sourceMappingURL=character-detail.component.js.map

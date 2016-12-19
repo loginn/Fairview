@@ -9,27 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var tags_service_1 = require("./tags.service");
-var TagsComponent = (function () {
-    function TagsComponent(tagsService) {
+var tag_service_1 = require("./tag.service");
+var TagListComponent = (function () {
+    function TagListComponent(tagsService) {
         this.tagsService = tagsService;
     }
-    TagsComponent.prototype.ngOnInit = function () {
-        this.getTags();
+    TagListComponent.prototype.ngOnInit = function () {
+        if (typeof this.tags === 'undefined') {
+            this.getTags();
+        }
     };
-    TagsComponent.prototype.getTags = function () {
+    TagListComponent.prototype.getTags = function () {
         var _this = this;
         this.tagsService.getTags().then(function (tags) { return _this.tags = tags; });
     };
-    TagsComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], TagListComponent.prototype, "tags", void 0);
+    TagListComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'tags-component',
-            templateUrl: 'tags.component.html',
+            selector: 'tag-list',
+            templateUrl: 'tag-list.component.html',
         }), 
-        __metadata('design:paramtypes', [tags_service_1.TagsService])
-    ], TagsComponent);
-    return TagsComponent;
+        __metadata('design:paramtypes', [tag_service_1.TagService])
+    ], TagListComponent);
+    return TagListComponent;
 }());
-exports.TagsComponent = TagsComponent;
-//# sourceMappingURL=tags.component.js.map
+exports.TagListComponent = TagListComponent;
+//# sourceMappingURL=tag-list.component.js.map

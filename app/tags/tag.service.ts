@@ -1,9 +1,9 @@
 import {Injectable} from "@angular/core";
 import {FairviewTag} from "./fairviewTag";
-import {TAGS} from "./mock.tags";
+import {TAGS} from "./mock.tag";
 
 @Injectable()
-export class TagsService {
+export class TagService {
   getTags(): Promise<FairviewTag[]> {
     return Promise.resolve(TAGS)
   }

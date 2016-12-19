@@ -10,38 +10,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var fairviewTag_1 = require("./fairviewTag");
-var tags_service_1 = require('./tags.service');
-var TagsFormComponent = (function () {
-    function TagsFormComponent(tagsService) {
+var tag_service_1 = require('./tag.service');
+var TagFormComponent = (function () {
+    function TagFormComponent(tagsService) {
         this.tagsService = tagsService;
         this.addDialogue = false;
     }
-    TagsFormComponent.prototype.ngOnInit = function () {
+    TagFormComponent.prototype.ngOnInit = function () {
         this.getTags();
     };
-    TagsFormComponent.prototype.getTags = function () {
+    TagFormComponent.prototype.getTags = function () {
         var _this = this;
         this.tagsService.getTags().then(function (tags) {
-            _this.tags = tags;
+            _this.globalTags = tags;
         });
     };
-    TagsFormComponent.prototype.displayAddDialogue = function () {
+    TagFormComponent.prototype.displayAddDialogue = function () {
         this.addDialogue = true;
-        this.newTag = new fairviewTag_1.FairviewTag(this.tags.length, 'Poulpe', fairviewTag_1.tagType.CHARACTER);
+        this.newTag = new fairviewTag_1.FairviewTag(this.globalTags.length, '', fairviewTag_1.tagType.CHARACTER);
     };
-    TagsFormComponent.prototype.onSubmit = function () {
-        this.tags.push(this.newTag);
+    TagFormComponent.prototype.onSubmit = function () {
+        // adding the new tag to both the event or character-detail and the global tag list
+        this.globalTags.push(this.newTag);
+        this.localTags.push(this.newTag);
         this.addDialogue = false;
     };
-    TagsFormComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], TagFormComponent.prototype, "localTags", void 0);
+    TagFormComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'tags-form',
-            templateUrl: 'tags-form.component.html',
+            selector: 'tag-form',
+            templateUrl: 'tag-form.component.html',
         }), 
-        __metadata('design:paramtypes', [tags_service_1.TagsService])
-    ], TagsFormComponent);
-    return TagsFormComponent;
+        __metadata('design:paramtypes', [tag_service_1.TagService])
+    ], TagFormComponent);
+    return TagFormComponent;
 }());
-exports.TagsFormComponent = TagsFormComponent;
-//# sourceMappingURL=tags-form.component.js.map
+exports.TagFormComponent = TagFormComponent;
+//# sourceMappingURL=tag-form.component.js.map
